@@ -1,2 +1,2 @@
 # testrunner
-Trying to host a GITHUB runner
+Trying to host a Github runner
