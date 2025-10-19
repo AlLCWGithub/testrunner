@@ -1,0 +1,20 @@
+name: Test runner
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: debian-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Compile C code
+        run: gcc test.c -o test
+        
+      - name: Run C code and log output
+        run: ./test | tee latestlog.txt
+
+      - name: Upload binary and log as artifacts
+        uses: actions/upload-artifact@v4
